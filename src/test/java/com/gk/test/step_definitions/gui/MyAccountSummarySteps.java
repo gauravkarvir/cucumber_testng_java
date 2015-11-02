@@ -4,7 +4,7 @@ import com.gk.test.page_objects.gui.MyAccountSummaryPage;
 import com.gk.test.step_definitions.gui.register.NewRegistrationSteps;
 import cucumber.api.java.en.Then;
 
-import static org.testng.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 
 public class MyAccountSummarySteps {
@@ -19,16 +19,16 @@ public class MyAccountSummarySteps {
 
     @Then("^i am registered successfully and can view \"([^\"]*)\" page$")
     public void i_am_registered_successfully_and_can_view_page(String pageTitle) throws Throwable {
-        assertEquals(pageTitle, myAccountSummaryPage.getMyaccountSummaryTitle());
+        assertThat(myAccountSummaryPage.getMyaccountSummaryTitle()).isEqualToIgnoringCase(pageTitle);
         String nameOfTheCustomer = myAccountSummaryPage.getPersonalInformation().get(0).getText();
         String address = myAccountSummaryPage.getPersonalInformation().get(1).getText();
         String townOrCity = myAccountSummaryPage.getPersonalInformation().get(2).getText();
         String emailAddress = myAccountSummaryPage.getPersonalInformation().get(3).getText();
 
-        assertEquals(newRegistrationSteps.getFirstNameData() + " " + newRegistrationSteps.getLastNameData(), nameOfTheCustomer);
-        assertEquals(newRegistrationSteps.getAddress1Data(), address);
-        assertEquals(newRegistrationSteps.getTownOrCityData(), townOrCity);
-        assertEquals(newRegistrationSteps.getEmailAddressData(), emailAddress);
+        assertThat(nameOfTheCustomer).isEqualToIgnoringCase(newRegistrationSteps.getFirstNameData() + " " + newRegistrationSteps.getLastNameData());
+        assertThat(address).isEqualToIgnoringCase(newRegistrationSteps.getAddress1Data());
+        assertThat(townOrCity).isEqualToIgnoringCase(newRegistrationSteps.getTownOrCityData());
+        assertThat(emailAddress).isEqualToIgnoringCase(newRegistrationSteps.getEmailAddressData());
 
 
     }

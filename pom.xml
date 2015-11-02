@@ -111,7 +111,7 @@
         <commons-io>1.3.2</commons-io>
         <commons-lang>3.4</commons-lang>
         <lombok>1.16.4</lombok>
-        <hamcrest-all>1.3</hamcrest-all>
+        <assertj-assert>3.0.0</assertj-assert>
         <appium-java-client>3.1.0</appium-java-client>
         <common-db-utils>1.6</common-db-utils>
         <maven-surefire-plugin>2.17</maven-surefire-plugin>
@@ -369,9 +369,9 @@
 
         <!-- matchers -->
         <dependency>
-            <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest-all</artifactId>
-            <version>${hamcrest-all}</version>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj-assert}</version>
         </dependency>
         <!-- matchers -->
 

@@ -6,7 +6,8 @@ import com.gk.test.framework.helpers.utils.RandomGenerator;
 import com.gk.test.page_objects.gui.NewRegistrationPage;
 import cucumber.api.java.en.When;
 import lombok.Getter;
-import org.testng.Assert;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 @Getter
 public class NewRegistrationSteps {
@@ -34,7 +35,7 @@ public class NewRegistrationSteps {
 
     @When("^i fill in the registration form on New Registration page$")
     public void i_fill_in_the_registration_form_on_New_Registration_page() throws Throwable {
-        Assert.assertTrue(newRegistrationPage.checkNewRegistrationForm(), "New Registration Form is Displayed");
+        assertThat(newRegistrationPage.checkNewRegistrationForm()).isTrue();
         enterUserRegistrationDetails();
 
     }
