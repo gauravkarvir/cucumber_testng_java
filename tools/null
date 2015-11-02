@@ -1,0 +1,471 @@
+[0.221][INFO]: COMMAND InitSession {
+   "desiredCapabilities": {
+      "browserName": "chrome",
+      "chrome.verbose": false,
+      "chromeOptions": {
+         "args": [ "--disable-web-security", "--test-type" ],
+         "extensions": [  ]
+      },
+      "loggingPrefs": {
+         "driver": "OFF"
+      },
+      "platform": "ANY",
+      "version": ""
+   }
+}
+[0.222][INFO]: Populating Preferences file: {
+   "alternate_error_pages": {
+      "enabled": false
+   },
+   "autofill": {
+      "enabled": false
+   },
+   "browser": {
+      "check_default_browser": false
+   },
+   "distribution": {
+      "import_bookmarks": false,
+      "import_history": false,
+      "import_search_engine": false,
+      "make_chrome_default_for_user": false,
+      "show_welcome_page": false,
+      "skip_first_run_ui": true
+   },
+   "dns_prefetching": {
+      "enabled": false
+   },
+   "profile": {
+      "content_settings": {
+         "pattern_pairs": {
+            "https://*,*": {
+               "media-stream": {
+                  "audio": "Default",
+                  "video": "Default"
+               }
+            }
+         }
+      },
+      "default_content_settings": {
+         "geolocation": 1,
+         "mouselock": 1,
+         "notifications": 1,
+         "popups": 1,
+         "ppapi-broker": 1
+      },
+      "password_manager_enabled": false
+   },
+   "safebrowsing": {
+      "enabled": false
+   },
+   "search": {
+      "suggest_enabled": false
+   },
+   "translate": {
+      "enabled": false
+   }
+}
+[0.222][INFO]: Populating Local State file: {
+   "background_mode": {
+      "enabled": false
+   },
+   "ssl": {
+      "rev_checking": {
+         "enabled": false
+      }
+   }
+}
+[0.222][INFO]: Launching chrome: /opt/google/chrome/google-chrome --disable-background-networking --disable-client-side-phishing-detection --disable-component-update --disable-default-apps --disable-hang-monitor --disable-prompt-on-repost --disable-sync --disable-web-resources --disable-web-security --enable-logging --full-memory-crash-report --ignore-certificate-errors --load-extension=/tmp/.com.google.Chrome.xopkpr/internal --logging-level=1 --metrics-recording-only --no-first-run --password-store=basic --remote-debugging-port=12605 --safebrowsing-disable-auto-update --safebrowsing-disable-download-protection --test-type --use-mock-keychain --user-data-dir=/tmp/.com.google.Chrome.j7bAO7 data:,
+[0.224][WARNING]: PAC support disabled because there is no system implementation
+[1.231][INFO]: RESPONSE InitSession {
+   "acceptSslCerts": true,
+   "applicationCacheEnabled": false,
+   "browserConnectionEnabled": false,
+   "browserName": "chrome",
+   "chrome": {
+      "userDataDir": "/tmp/.com.google.Chrome.j7bAO7"
+   },
+   "cssSelectorsEnabled": true,
+   "databaseEnabled": false,
+   "handlesAlerts": true,
+   "javascriptEnabled": true,
+   "locationContextEnabled": true,
+   "nativeEvents": true,
+   "platform": "Linux",
+   "rotatable": false,
+   "takesHeapSnapshot": true,
+   "takesScreenshot": true,
+   "version": "34.0.1847.116",
+   "webStorageEnabled": true
+}
+[1.314][INFO]: COMMAND SetWindowSize {
+   "height": 1024,
+   "width": 1280,
+   "windowHandle": "current"
+}
+[1.361][INFO]: Waiting for pending navigations...
+[1.439][INFO]: Done waiting for pending navigations
+[1.683][INFO]: RESPONSE SetWindowSize
+[1.709][INFO]: COMMAND FindElements {
+   "using": "class name",
+   "value": "cc-cookie-accept"
+}
+[2.041][INFO]: Waiting for pending navigations...
+[2.087][INFO]: Done waiting for pending navigations
+[2.104][INFO]: Waiting for pending navigations...
+[2.104][INFO]: Done waiting for pending navigations
+[2.104][INFO]: RESPONSE FindElements [  ]
+[2.477][INFO]: COMMAND Navigate {
+   "url": "http://flourish.deploy.deco-columbus.com/"
+}
+[2.477][INFO]: Waiting for pending navigations...
+[2.477][INFO]: Done waiting for pending navigations
+[2.564][INFO]: Waiting for pending navigations...
+[4.220][INFO]: Done waiting for pending navigations
+[4.220][INFO]: RESPONSE Navigate
+[4.257][INFO]: COMMAND GetUrl {
+
+}
+[4.257][INFO]: Waiting for pending navigations...
+[4.257][INFO]: Done waiting for pending navigations
+[4.262][INFO]: Waiting for pending navigations...
+[4.262][INFO]: Done waiting for pending navigations
+[4.262][INFO]: RESPONSE GetUrl "http://flourish.deploy.deco-columbus.com/en"
+[4.268][INFO]: COMMAND FindElement {
+   "using": "id",
+   "value": "choose-products"
+}
+[4.268][INFO]: Waiting for pending navigations...
+[4.268][INFO]: Done waiting for pending navigations
+[4.319][INFO]: Waiting for pending navigations...
+[4.319][INFO]: Done waiting for pending navigations
+[4.319][INFO]: RESPONSE FindElement {
+   "ELEMENT": "0.7678384680766612-1"
+}
+[4.329][INFO]: COMMAND ClickElement {
+   "id": "0.7678384680766612-1"
+}
+[4.329][INFO]: Waiting for pending navigations...
+[4.329][INFO]: Done waiting for pending navigations
+[4.463][INFO]: Waiting for pending navigations...
+[5.603][INFO]: Done waiting for pending navigations
+[5.603][INFO]: RESPONSE ClickElement
+[5.612][INFO]: COMMAND ExecuteScript {
+   "args": [  ],
+   "script": "return (typeof Deco !== 'undefined');"
+}
+[5.612][INFO]: Waiting for pending navigations...
+[5.612][INFO]: Done waiting for pending navigations
+[5.617][INFO]: Waiting for pending navigations...
+[5.617][INFO]: Done waiting for pending navigations
+[5.617][INFO]: RESPONSE ExecuteScript true
+[5.634][INFO]: COMMAND ExecuteScript {
+   "args": [  ],
+   "script": "return (typeof Deco !== 'undefined');"
+}
+[5.634][INFO]: Waiting for pending navigations...
+[5.634][INFO]: Done waiting for pending navigations
+[5.638][INFO]: Waiting for pending navigations...
+[5.638][INFO]: Done waiting for pending navigations
+[5.638][INFO]: RESPONSE ExecuteScript true
+[6.649][INFO]: COMMAND FindElement {
+   "using": "id",
+   "value": "roomTypeSelection"
+}
+[6.649][INFO]: Waiting for pending navigations...
+[6.649][INFO]: Done waiting for pending navigations
+[6.662][INFO]: Waiting for pending navigations...
+[6.662][INFO]: Done waiting for pending navigations
+[6.662][INFO]: RESPONSE FindElement {
+   "ELEMENT": "0.02068066759966314-1"
+}
+[6.669][INFO]: COMMAND IsElementDisplayed {
+   "id": "0.02068066759966314-1"
+}
+[6.669][INFO]: Waiting for pending navigations...
+[6.669][INFO]: Done waiting for pending navigations
+[6.682][INFO]: Waiting for pending navigations...
+[6.682][INFO]: Done waiting for pending navigations
+[6.682][INFO]: RESPONSE IsElementDisplayed true
+[6.690][INFO]: COMMAND GetElementTagName {
+   "id": "0.02068066759966314-1"
+}
+[6.690][INFO]: Waiting for pending navigations...
+[6.690][INFO]: Done waiting for pending navigations
+[6.693][INFO]: Waiting for pending navigations...
+[6.693][INFO]: Done waiting for pending navigations
+[6.693][INFO]: RESPONSE GetElementTagName "select"
+[6.697][INFO]: COMMAND GetElementAttribute {
+   "id": "0.02068066759966314-1",
+   "name": "multiple"
+}
+[6.697][INFO]: Waiting for pending navigations...
+[6.697][INFO]: Done waiting for pending navigations
+[6.708][INFO]: Waiting for pending navigations...
+[6.708][INFO]: Done waiting for pending navigations
+[6.709][INFO]: RESPONSE GetElementAttribute null
+[6.716][INFO]: COMMAND FindChildElements {
+   "id": "0.02068066759966314-1",
+   "using": "xpath",
+   "value": ".//option[@value = \"Living Room\"]"
+}
+[6.716][INFO]: Waiting for pending navigations...
+[6.716][INFO]: Done waiting for pending navigations
+[6.729][INFO]: Waiting for pending navigations...
+[6.729][INFO]: Done waiting for pending navigations
+[6.729][INFO]: RESPONSE FindChildElements [ {
+   "ELEMENT": "0.02068066759966314-2"
+} ]
+[6.734][INFO]: COMMAND IsElementSelected {
+   "id": "0.02068066759966314-2"
+}
+[6.734][INFO]: Waiting for pending navigations...
+[6.734][INFO]: Done waiting for pending navigations
+[6.742][INFO]: Waiting for pending navigations...
+[6.742][INFO]: Done waiting for pending navigations
+[6.742][INFO]: RESPONSE IsElementSelected false
+[6.746][INFO]: COMMAND ClickElement {
+   "id": "0.02068066759966314-2"
+}
+[6.746][INFO]: Waiting for pending navigations...
+[6.746][INFO]: Done waiting for pending navigations
+[6.819][INFO]: Waiting for pending navigations...
+[6.819][INFO]: Done waiting for pending navigations
+[6.819][INFO]: RESPONSE ClickElement
+[7.832][INFO]: COMMAND FindElement {
+   "using": "xpath",
+   "value": "//a[contains(.,'Vinyl Matt')]"
+}
+[7.833][INFO]: Waiting for pending navigations...
+[7.833][INFO]: Done waiting for pending navigations
+[7.851][INFO]: Waiting for pending navigations...
+[7.851][INFO]: Done waiting for pending navigations
+[7.851][INFO]: RESPONSE FindElement {
+   "ELEMENT": "0.02068066759966314-3"
+}
+[7.859][INFO]: COMMAND IsElementDisplayed {
+   "id": "0.02068066759966314-3"
+}
+[7.859][INFO]: Waiting for pending navigations...
+[7.859][INFO]: Done waiting for pending navigations
+[7.878][INFO]: Waiting for pending navigations...
+[7.878][INFO]: Done waiting for pending navigations
+[7.878][INFO]: RESPONSE IsElementDisplayed true
+[7.887][INFO]: COMMAND ClickElement {
+   "id": "0.02068066759966314-3"
+}
+[7.887][INFO]: Waiting for pending navigations...
+[7.887][INFO]: Done waiting for pending navigations
+[7.967][INFO]: Waiting for pending navigations...
+[8.673][INFO]: Done waiting for pending navigations
+[8.673][INFO]: RESPONSE ClickElement
+[8.690][INFO]: COMMAND ExecuteScript {
+   "args": [  ],
+   "script": "return (typeof Deco !== 'undefined');"
+}
+[8.690][INFO]: Waiting for pending navigations...
+[8.690][INFO]: Done waiting for pending navigations
+[8.693][INFO]: Waiting for pending navigations...
+[8.693][INFO]: Done waiting for pending navigations
+[8.693][INFO]: RESPONSE ExecuteScript true
+[9.706][INFO]: COMMAND FindElement {
+   "using": "id",
+   "value": "pick-color"
+}
+[9.706][INFO]: Waiting for pending navigations...
+[9.706][INFO]: Done waiting for pending navigations
+[9.720][INFO]: Waiting for pending navigations...
+[9.720][INFO]: Done waiting for pending navigations
+[9.720][INFO]: RESPONSE FindElement {
+   "ELEMENT": "0.5202721536625177-1"
+}
+[9.725][INFO]: COMMAND IsElementDisplayed {
+   "id": "0.5202721536625177-1"
+}
+[9.725][INFO]: Waiting for pending navigations...
+[9.725][INFO]: Done waiting for pending navigations
+[9.742][INFO]: Waiting for pending navigations...
+[9.742][INFO]: Done waiting for pending navigations
+[9.742][INFO]: RESPONSE IsElementDisplayed true
+[9.749][INFO]: COMMAND FindElement {
+   "using": "id",
+   "value": "pick-color"
+}
+[9.749][INFO]: Waiting for pending navigations...
+[9.749][INFO]: Done waiting for pending navigations
+[9.755][INFO]: Waiting for pending navigations...
+[9.755][INFO]: Done waiting for pending navigations
+[9.755][INFO]: RESPONSE FindElement {
+   "ELEMENT": "0.5202721536625177-1"
+}
+[9.762][INFO]: COMMAND IsElementDisplayed {
+   "id": "0.5202721536625177-1"
+}
+[9.762][INFO]: Waiting for pending navigations...
+[9.762][INFO]: Done waiting for pending navigations
+[9.770][INFO]: Waiting for pending navigations...
+[9.770][INFO]: Done waiting for pending navigations
+[9.770][INFO]: RESPONSE IsElementDisplayed true
+[9.785][INFO]: COMMAND FindElement {
+   "using": "id",
+   "value": "pick-color"
+}
+[9.786][INFO]: Waiting for pending navigations...
+[9.786][INFO]: Done waiting for pending navigations
+[9.790][INFO]: Waiting for pending navigations...
+[9.790][INFO]: Done waiting for pending navigations
+[9.790][INFO]: RESPONSE FindElement {
+   "ELEMENT": "0.5202721536625177-1"
+}
+[9.795][INFO]: COMMAND ClickElement {
+   "id": "0.5202721536625177-1"
+}
+[9.795][INFO]: Waiting for pending navigations...
+[9.795][INFO]: Done waiting for pending navigations
+[9.886][INFO]: Waiting for pending navigations...
+[9.886][INFO]: Done waiting for pending navigations
+[9.886][INFO]: RESPONSE ClickElement
+[10.894][INFO]: COMMAND FindElement {
+   "using": "css selector",
+   "value": ".product-name>a"
+}
+[10.894][INFO]: Waiting for pending navigations...
+[10.894][INFO]: Done waiting for pending navigations
+[10.908][INFO]: Waiting for pending navigations...
+[10.908][INFO]: Done waiting for pending navigations
+[10.908][INFO]: RESPONSE FindElement {
+   "ELEMENT": "0.5202721536625177-2"
+}
+[10.915][INFO]: COMMAND IsElementDisplayed {
+   "id": "0.5202721536625177-2"
+}
+[10.915][INFO]: Waiting for pending navigations...
+[10.915][INFO]: Done waiting for pending navigations
+[10.934][INFO]: Waiting for pending navigations...
+[10.934][INFO]: Done waiting for pending navigations
+[10.934][INFO]: RESPONSE IsElementDisplayed true
+[10.941][INFO]: COMMAND GetElementText {
+   "id": "0.5202721536625177-2"
+}
+[10.942][INFO]: Waiting for pending navigations...
+[10.942][INFO]: Done waiting for pending navigations
+[10.959][INFO]: Waiting for pending navigations...
+[10.959][INFO]: Done waiting for pending navigations
+[10.959][INFO]: RESPONSE GetElementText "Paint_Tinted_Two_Colors_Multiple_Sizes"
+[10.973][INFO]: COMMAND FindElement {
+   "using": "css selector",
+   "value": ".cross-sell>h5"
+}
+[10.973][INFO]: Waiting for pending navigations...
+[10.973][INFO]: Done waiting for pending navigations
+[10.989][INFO]: Waiting for pending navigations...
+[10.989][INFO]: Done waiting for pending navigations
+[10.989][INFO]: RESPONSE FindElement {
+   "ELEMENT": "0.5202721536625177-3"
+}
+[10.995][INFO]: COMMAND GetElementText {
+   "id": "0.5202721536625177-3"
+}
+[10.995][INFO]: Waiting for pending navigations...
+[10.995][INFO]: Done waiting for pending navigations
+[11.011][INFO]: Waiting for pending navigations...
+[11.011][INFO]: Done waiting for pending navigations
+[11.011][INFO]: RESPONSE GetElementText "Want more colour options?"
+[11.020][INFO]: COMMAND FindElement {
+   "using": "css selector",
+   "value": ".cross-sell>h5+p.short-desc"
+}
+[11.020][INFO]: Waiting for pending navigations...
+[11.020][INFO]: Done waiting for pending navigations
+[11.034][INFO]: Waiting for pending navigations...
+[11.034][INFO]: Done waiting for pending navigations
+[11.034][INFO]: RESPONSE FindElement {
+   "ELEMENT": "0.5202721536625177-4"
+}
+[11.041][INFO]: COMMAND GetElementText {
+   "id": "0.5202721536625177-4"
+}
+[11.041][INFO]: Waiting for pending navigations...
+[11.041][INFO]: Done waiting for pending navigations
+[11.057][INFO]: Waiting for pending navigations...
+[11.057][INFO]: Done waiting for pending navigations
+[11.057][INFO]: RESPONSE GetElementText "We recommend using..."
+[12.064][INFO]: COMMAND FindElement {
+   "using": "css selector",
+   "value": ".product-name>a"
+}
+[12.065][INFO]: Waiting for pending navigations...
+[12.065][INFO]: Done waiting for pending navigations
+[12.069][INFO]: Waiting for pending navigations...
+[12.069][INFO]: Done waiting for pending navigations
+[12.069][INFO]: RESPONSE FindElement {
+   "ELEMENT": "0.5202721536625177-2"
+}
+[12.074][INFO]: COMMAND IsElementDisplayed {
+   "id": "0.5202721536625177-2"
+}
+[12.074][INFO]: Waiting for pending navigations...
+[12.074][INFO]: Done waiting for pending navigations
+[12.081][INFO]: Waiting for pending navigations...
+[12.081][INFO]: Done waiting for pending navigations
+[12.081][INFO]: RESPONSE IsElementDisplayed true
+[12.089][INFO]: COMMAND FindElement {
+   "using": "css selector",
+   "value": ".product-image"
+}
+[12.089][INFO]: Waiting for pending navigations...
+[12.089][INFO]: Done waiting for pending navigations
+[12.107][INFO]: Waiting for pending navigations...
+[12.107][INFO]: Done waiting for pending navigations
+[12.107][INFO]: RESPONSE FindElement {
+   "ELEMENT": "0.5202721536625177-5"
+}
+[13.115][INFO]: COMMAND FindElement {
+   "using": "css selector",
+   "value": ".button-outer a"
+}
+[13.115][INFO]: Waiting for pending navigations...
+[13.115][INFO]: Done waiting for pending navigations
+[13.131][INFO]: Waiting for pending navigations...
+[13.131][INFO]: Done waiting for pending navigations
+[13.131][INFO]: RESPONSE FindElement {
+   "ELEMENT": "0.5202721536625177-6"
+}
+[13.135][INFO]: COMMAND IsElementDisplayed {
+   "id": "0.5202721536625177-6"
+}
+[13.135][INFO]: Waiting for pending navigations...
+[13.135][INFO]: Done waiting for pending navigations
+[13.147][INFO]: Waiting for pending navigations...
+[13.147][INFO]: Done waiting for pending navigations
+[13.147][INFO]: RESPONSE IsElementDisplayed true
+[13.152][INFO]: COMMAND GetElementText {
+   "id": "0.5202721536625177-6"
+}
+[13.152][INFO]: Waiting for pending navigations...
+[13.152][INFO]: Done waiting for pending navigations
+[13.295][INFO]: Waiting for pending navigations...
+[13.295][INFO]: Done waiting for pending navigations
+[13.295][INFO]: RESPONSE GetElementText "Switch to this product"
+[13.302][INFO]: COMMAND ExecuteScript {
+   "args": [  ],
+   "script": "document.querySelector('h1[class=product-name] > a').click()"
+}
+[13.302][INFO]: Waiting for pending navigations...
+[13.302][INFO]: Done waiting for pending navigations
+[13.347][INFO]: Waiting for pending navigations...
+[13.965][INFO]: Done waiting for pending navigations
+[13.965][INFO]: RESPONSE ExecuteScript null
+[13.988][INFO]: COMMAND GetUrl {
+
+}
+[13.988][INFO]: Waiting for pending navigations...
+[13.988][INFO]: Done waiting for pending navigations
+[13.994][INFO]: Waiting for pending navigations...
+[13.994][INFO]: Done waiting for pending navigations
+[13.994][INFO]: RESPONSE GetUrl "http://flourish.deploy.deco-columbus.com/en/products/Paint_Tinted_Two_Colors_Multiple_Sizes"
+[14.025][INFO]: COMMAND Navigate {
+   "url": "http://flourish.deploy.deco-columbus.com/"
+}
+[14.025][INFO]: Waiting for pending navigations...
+[14.025][INFO]: Done waiting for pending navigations
+[14.075][INFO]: Waiting for pending navigations...

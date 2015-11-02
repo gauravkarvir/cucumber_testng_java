@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="run tests in parallel" parallel="tests" verbose="1" configfailurepolicy="continue" thread-count="2">
+
+    <test name="ParallelThread1">
+        <!-- Specify the Run Suite classes which needed to be run in parallel -->
+        <classes>
+            <class name="com.gk.test.RunWebATSuite"/>
+
+        </classes>
+    </test>
+
+    <test name="ParallelThread2">
+        <!-- Specify the Run Suite classes which needed to be run in parallel -->
+        <classes>
+
+            <class name="com.gk.test.RunApiATSuite"/>
+        </classes>
+    </test>
+</suite>
