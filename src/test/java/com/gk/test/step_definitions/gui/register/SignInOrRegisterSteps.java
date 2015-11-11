@@ -30,10 +30,10 @@ public class SignInOrRegisterSteps {
 
     @Given("^i enter loginId \"(.*?)\" and password \"(.*?)\"$")
     public void i_enter_loginId_and_password(String loginId, String password) throws Throwable {
-        signInOrRegisterPage.loginIdText().sendKeys("");
+        signInOrRegisterPage.loginIdText().clear();
         signInOrRegisterPage.loginIdText().sendKeys(loginId);
 
-        signInOrRegisterPage.passwordText().sendKeys("");
+        signInOrRegisterPage.passwordText().clear();
         signInOrRegisterPage.passwordText().sendKeys(password);
 
     }
