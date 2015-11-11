@@ -20,12 +20,15 @@ Feature: REGISTER:- As a new customer of Lloydspharmacy I would like to register
 #    When i click "SIGN_OUT" on the Home Page
 #    Then i am signed out successfully and can view Sign In Page
 
+
   Scenario Outline: Negative combinations for user login scenarios
     Given i navigate to the Lloydspharmacy "HOME" page
     When i click "SIGN_IN" on the Home Page
     And i enter loginId "<loginId>" and password "<password>"
     And i click on Sign In button on the Login Page
     Then i can see the validation message "<validationMessage>"
+
+
 
     Examples:
       | loginId | password | validationMessage      |

@@ -1,14 +1,12 @@
 package com.gk.test.models;
 
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
-class ExampleModel {
+@Setter
+public class ExampleModel {
     private String title;
-    private String colour;
-    private String topic;
-    private String mood;
-    private boolean section;
-    private boolean featuredColourSection;
-    private boolean meetTheExpert;
+    private String process;
+    private String  location;
 }
