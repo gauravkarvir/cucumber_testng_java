@@ -55,17 +55,12 @@ The test automation framework is comprised of following tools and libraries
 *Rest-Assured (optional): - Restful Api framework     
 *PhantomJsDriver, GhostDriver: - Full web stack No browser required supporting headless testing
 
-Contact information
-===================
-Overall Test & Test management support
-------------------------------------------
-
 Test Automation framework support
 ------------------------------------------
 Gaurav Karvir
 --------------
 Test Automation Architect  
-gkarvir@salmon.com  
+sgtechuk@gmail.com  
 
 
 
@@ -83,7 +78,7 @@ Open Terminal or command line
 cd to the desired folder where the test automation source code needs to be checkout
 
 Run command
-git clone https://github.com/salmon-org/master_cucumber_testng.git
+git clone https://github.com/gauravkarvir/cucumber_testng_java.git
 
 This will download the latest template source code
 
