@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Automation Framework by gauravkarvir</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Automation Framework</h1>
+      <h2 class="project-tagline">BDD Cucumber Selenium Webdriver Appium Rest-Assured Test Automation Framework</h2>
+      <a href="https://github.com/gauravkarvir/cucumber_testng_java" class="btn">View on GitHub</a>
+      <a href="https://github.com/gauravkarvir/cucumber_testng_java/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/gauravkarvir/cucumber_testng_java/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1></h1>
+
+<h1>
+<a id="bdd-cucumber-selenium-webdriver-appium-rest-assured-java-test-automation-framework" class="anchor" href="#bdd-cucumber-selenium-webdriver-appium-rest-assured-java-test-automation-framework" aria-hidden="true"><span class="octicon octicon-link"></span></a>BDD Cucumber Selenium Webdriver Appium Rest-Assured Java Test Automation Framework</h1>
+
+<p>This project is a template test automation framework, which provides structured and standard way of 
+creating automated test scripts for GUI, Mobile and API level tests across projects  </p>
+
+<p>This is a reusable automation framework that blends together Selenium WebDriver, Appium, Android Driver, RestEasy, SauceLabs and Cucumber JVM (incorporating Gherkin and the BDD 'Given, When Then' testing construct)   </p>
+
+<p>This framework supports automation of : - 
+*Web Browsers (Firefox, Chrome, Internet Explorer, Safari)<br>
+*Web Browser Responsive Design with view ports configuration<br>
+*Mobile Automation on Emulated and Physical Devices, for Native, Hybrid, and Web App<br>
+*Mobile Automation on Cloud using SauceLabs</p>
+
+<p>The framework incorporates design principle of BDD (Behaviour driven development) which promotes
+ writing acceptance tests by describing behaviour of application under test in simple english language from
+ the perspective of its stakeholders. 
+ Having test written in Natural language helps the Project Team 
+ (Product Owners, Business Analysts, Development and QA team) to understand and track the requirements</p>
+
+<p>Supports Custom Page Object model which represents the screens of AUT as a series of objects and 
+encapsulates the fields represented by a page which ultimately avoids duplication and improves code maintainability and readability.  </p>
+
+<p>Sonar Continuous Code Quality Management: -
+conventions (Checkstyle), bad practices (PMD) and potential bugs (FindBugs).</p>
+
+<h1>
+<a id="tools--libraries" class="anchor" href="#tools--libraries" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tools &amp; libraries</h1>
+
+<p>The test automation framework is comprised of following tools and libraries  </p>
+
+<p>*Cucumber-JVM:- BDD Framework<br>
+*Custom Page Object Pattern and utility functions<br>
+*Selenium WebDriver: - Browser automation framework
+*Selenium Grid: - Distribute test Execution across several machines<br>
+*Android Driver: - Android Mobile Automation<br>
+*Appium: - Mobile Native app, Hybrid App, Web app<br>
+*SauceLabs: - Cloud Based testing of mobile and Web Apps<br>
+*JAVA: - Programming language<br>
+*TestNg: - TestNg Java testing framework<br>
+*Maven: - Build tool<br>
+*Jenkins: - Continuous Integration<br>
+*Lombok: - Java utility api<br>
+*PicoContainer: - Standard Dependency Injection<br>
+*Git OR SVN: - Version Control<br>
+*Github or Local Git Server: - Git repository hosted server<br>
+*Intellij Or Eclipse: - Integrated Development Environment<br>
+*AssertJ: - Matcher's<br>
+*Loggers: - Simple Logging Facade for Java<br>
+*Resource Bundle: - Supporting i18n Localisation and Externalise String 
+*Joda-Time: - Java Date time Api<br>
+*SonarQube (optional): - Code Quality and Code Coverage<br>
+*DbUtils Mysql (optional): - Java Database utility api<br>
+*Rest-Assured (optional): - Restful Api framework<br>
+*PhantomJsDriver, GhostDriver: - Full web stack No browser required supporting headless testing</p>
+
+<h2>
+<a id="test-automation-framework-support" class="anchor" href="#test-automation-framework-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Test Automation framework support</h2>
+
+<h2>
+<a id="gaurav-karvir" class="anchor" href="#gaurav-karvir" aria-hidden="true"><span class="octicon octicon-link"></span></a>Gaurav Karvir</h2>
+
+<p>Test Automation Architect<br>
+<a href="mailto:sgtechuk@gmail.com">sgtechuk@gmail.com</a>  </p>
+
+<h1>
+<a id="machine-configuration" class="anchor" href="#machine-configuration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Machine Configuration</h1>
+
+<p>Configure Ubuntu / Windows and setup: -<br>
+*Java 8<br>
+*Git  / SVN<br>
+*Maven  </p>
+
+<h1>
+<a id="get-the-latest-source-code" class="anchor" href="#get-the-latest-source-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>Get the latest Source Code</h1>
+
+<p>Open Terminal or command line
+cd to the desired folder where the test automation source code needs to be checkout</p>
+
+<p>Run command
+git clone <a href="https://github.com/gauravkarvir/cucumber_testng_java.git">https://github.com/gauravkarvir/cucumber_testng_java.git</a></p>
+
+<p>This will download the latest template source code</p>
+
+<h1>
+<a id="ide-configuration" class="anchor" href="#ide-configuration" aria-hidden="true"><span class="octicon octicon-link"></span></a>IDE Configuration</h1>
+
+<h2>
+<a id="intellij-plugins--" class="anchor" href="#intellij-plugins--" aria-hidden="true"><span class="octicon octicon-link"></span></a>Intellij plugins  </h2>
+
+<p>Configure and Install Following Plugins<br>
+File &gt;&gt; Setting &gt;&gt; Plugins &gt;&gt; Browser Repositories&gt;</p>
+
+<p>*Cucumber for Java
+*Gherkin
+*lombok
+*Git Integration/ SVN Integration<br>
+*Maven Integration
+*SonarQube (optional)</p>
+
+<h2>
+<a id="eclipse-plugins--" class="anchor" href="#eclipse-plugins--" aria-hidden="true"><span class="octicon octicon-link"></span></a>Eclipse plugins  </h2>
+
+<p>Configure and Install Following Plugins<br>
+Help&gt;&gt;Install new software
+*Cucumber for Java
+<a href="http://cucumber.github.com/cucumber-eclipse/update-site">http://cucumber.github.com/cucumber-eclipse/update-site</a>  </p>
+
+<p>*lombok
+Download lombok.jar from <a href="http://projectlombok.org/download.html">http://projectlombok.org/download.html</a>
+Copy the Jar to eclipse installation directory
+right click the Jar&gt;Open with Open JDK or Oracle JDK Java 7 Runtime
+Follow the Installation Steps    </p>
+
+<p>*TestNg  </p>
+
+<p>*Git Integration</p>
+
+<p>*SonarQube (optional)</p>
+
+<p>Plugin configuration for Cucumber Feature
+Open Run Configurations
+Select Cucumber Feature and create one new configuration
+Project: salmonAutomationFramework
+Feature: src/salmonAutomationFramework/src/test/resources/features
+Glue:  com.salmon.test.step_definitions
+Reports:  monochrome, pretty</p>
+
+<p>File &gt;&gt; Setting &gt;&gt;<br>
+Search for Annotation Processing<br>
+(Java Compiler ... Annotation Processing&gt;&gt; Enable the check box</p>
+
+<h2>
+<a id="import-project-into-intellij" class="anchor" href="#import-project-into-intellij" aria-hidden="true"><span class="octicon octicon-link"></span></a>Import Project into Intellij</h2>
+
+<p>File&gt;Import Project&gt;
+Browse to SalmonAutomationFramework</p>
+
+<h2>
+<a id="import-project-into-eclipse" class="anchor" href="#import-project-into-eclipse" aria-hidden="true"><span class="octicon octicon-link"></span></a>Import Project into Eclipse</h2>
+
+<p>File&gt;Import&gt;Maven&gt;Existing Maven Projects&gt;Next&gt;
+Browse to SalmonAutomationFramework
+Ensure pom.xml is found
+Finish</p>
+
+<p>open terminal
+cd to test root directory
+run "mvn clean eclipse:eclipse" </p>
+
+<h1>
+<a id="framework-setup-steps" class="anchor" href="#framework-setup-steps" aria-hidden="true"><span class="octicon octicon-link"></span></a>Framework Setup steps</h1>
+
+<p>The URL, Browser Configuration, jdbc connections etc are defined in the respective config.properties file under each desired profile which you want to run.
+In pom.xml we use the relative path within  as shown below to invoke or make use of these profiles. 
+src/main/resources/profiles</p>
+
+<p>Open "pom.xml" 
+Scroll to Profile section : - Choose desired profile e.g "dev" for running locally</p>
+
+<pre><code>    &lt;profile&gt;
+        &lt;id&gt;dev&lt;/id&gt;
+        &lt;activation&gt;
+            &lt;activeByDefault&gt;true&lt;/activeByDefault&gt;
+        &lt;/activation&gt;
+        &lt;properties&gt;
+            &lt;profile.path&gt;/profiles/dev/config.properties&lt;/profile.path&gt;
+            &lt;testToRun&gt;**/*WebATSuite*.class&lt;/testToRun&gt;
+        &lt;/properties&gt;
+    &lt;/profile&gt;
+</code></pre>
+
+<h1>
+<a id="compile-build-or-run-tests" class="anchor" href="#compile-build-or-run-tests" aria-hidden="true"><span class="octicon octicon-link"></span></a>Compile Build or Run Tests</h1>
+
+<p>Command Line</p>
+
+<p>cd to root ot salmonAutomationFramework project directory</p>
+
+<h2>
+<a id="to-clean-and-compile-the-build" class="anchor" href="#to-clean-and-compile-the-build" aria-hidden="true"><span class="octicon octicon-link"></span></a>To clean and compile the build</h2>
+
+<p>mvn clean install -DskipTests</p>
+
+<h2>
+<a id="to-run-all-tests-parallel" class="anchor" href="#to-run-all-tests-parallel" aria-hidden="true"><span class="octicon octicon-link"></span></a>To run all tests parallel</h2>
+
+<p>mvn clean install  </p>
+
+<p>OR</p>
+
+<p>mvn clean install -P dev  </p>
+
+<p>*Note -P dev is default profile hence doesn't need to be specified for every run </p>
+
+<h2>
+<a id="to-run-a-single-test-with-tags" class="anchor" href="#to-run-a-single-test-with-tags" aria-hidden="true"><span class="octicon octicon-link"></span></a>To run a single test with tags</h2>
+
+<p>mvn clean install -Dcucumber.options="--tags <a href="https://github.com/gui" class="user-mention">@gui</a> --tags ~@api" -P single</p>
+
+<p>** Note "~" before tag means this specific tag will not run</p>
+
+<h2>
+<a id="to-rerun-failed-test-scenarios" class="anchor" href="#to-rerun-failed-test-scenarios" aria-hidden="true"><span class="octicon octicon-link"></span></a>To Rerun failed test scenarios</h2>
+
+<p>After a test suite is run. There is rerun.txt created at the project root level in rerun folder. This rerun file contains the details of all the failed scenarios.
+e.g master_cucumber_testng\rerun\rerun.txt</p>
+
+<p>mvn clean install -Dcucumber.options="@rerun/rerun.txt" -P single</p>
+
+<h1>
+<a id="jenkins" class="anchor" href="#jenkins" aria-hidden="true"><span class="octicon octicon-link"></span></a>Jenkins</h1>
+
+<p>mvn clean install  -P jenkins</p>
+
+<p>** Create 3 string parameters in jenkins 
+with the below conventions which will be passed on as an argument to the above maven command  </p>
+
+<p>Key: cucumber.options Default Value: --tags <a href="https://github.com/gui" class="user-mention">@gui</a>, @api<br>
+Key: driverhost  Default Value: 0000.000.000.00 (RAS server with selenium server configured for the project)<br>
+Key: driverport  Default Value: 4444  </p>
+
+<h1>
+<a id="report" class="anchor" href="#report" aria-hidden="true"><span class="octicon octicon-link"></span></a>Report</h1>
+
+<h2>
+<a id="local-reports" class="anchor" href="#local-reports" aria-hidden="true"><span class="octicon octicon-link"></span></a>Local reports</h2>
+
+<p>Standard HTML Report<br>
+A report will be generated at /target/cucumber-report/index.html  </p>
+
+<p>Preety Cucumber-Html Report<br>
+A report will be generated at /target/cucumber-report/cucumber-html-reports/feature-overview.html </p>
+
+<h2>
+<a id="jenkins-report" class="anchor" href="#jenkins-report" aria-hidden="true"><span class="octicon octicon-link"></span></a>Jenkins report</h2>
+
+<p>The report will be available as part of configured Jenkins test build<br>
+**Cucumber plugin for Jenkins needs to be installed</p>
+
+<h1>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting Started</h1>
+
+<h2>
+<a id="feature-files" class="anchor" href="#feature-files" aria-hidden="true"><span class="octicon octicon-link"></span></a>Feature Files</h2>
+
+<p>These files contains the acceptance criteria which are written in Gherkin Language and contains various scenarios.<br>
+The feature files are tagged with "@tagname" to group common feature files </p>
+
+<p>File Extension:  *.feature<br>
+Location: "/home/dev/src/salmonAutomationFramework/src/test/resources/features"<br>
+Directory:  Separate directories for GUI and API tests, Group common features files in a 
+single directory<br>
+File Conventions:Meaning full name "WebRegister.feature"
+Example:<br>
+<a href="https://github.com/gui" class="user-mention">@gui</a>
+Feature: REGISTER:- As a new customer of Lloydspharmacy I would like to register 
+Scenario:Perform a New registration for a customer
+    Given I navigate to the Lloydspharmacy "HOME" page</p>
+
+<h2>
+<a id="page-objects" class="anchor" href="#page-objects" aria-hidden="true"><span class="octicon octicon-link"></span></a>Page Objects</h2>
+
+<p>PageObjects are used to store the WebElements for a Web Page.
+A good practice is to have a separate class for every single WebPage.
+To avoid duplication for multiple pages which have common web page elements a Parent class can be created 
+and the child class can then inherit.<br>
+Every Page  class extends "PageObject.class" to make use of the WebDriver Object and utility functions.<br>
+In case of Parent and Child Class, Parent class extends PageObject class and child class extends Parent class      </p>
+
+<p>Location: /home/dev/src/salmonAutomationFramework/src/test/java/com/salmon/test/pageobjects
+Directory structure: Group common Page Objects classes in a single directory e.g Login Functionality Classes in Login Directory<br>
+File Conventions:Every Class file ends with Page.class (Homepage.class)  </p>
+
+<p>Example:   </p>
+
+<p>public class HomeSamplePage extends PageObject {</p>
+
+<pre><code>private By headerSignInLink = By.cssSelector("#headerSignInLink a");
+
+public void clickSignInLink() {
+    waitForExpectedElement(headerSignInLink).click();
+}
+</code></pre>
+
+<p>}</p>
+
+<h2>
+<a id="step-definitions" class="anchor" href="#step-definitions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step Definitions</h2>
+
+<p>Every steps defined in Feature file needs to be implemented in Step Definitions Class</p>
+
+<p>Location: /home/dev/src/salmonAutomationFramework/src/test/java/com/salmon/test/step_definitions 
+Directory structure: Separate directories for GUI and API tests, Group common step definition files in a 
+                     single directory<br>
+File Conventions:Every Class file ends with Steps.class (LoginSteps.class)  </p>
+
+<p>Example:  </p>
+
+<p>public class HomePageSteps {</p>
+
+<p>private HomeSamplePage homePage =  new HomeSamplePage();</p>
+
+<pre><code>@And("^i click on Sign In on the Home Page$")
+public void i_click_on_Sign_In_on__the_Home_Page() throws Throwable {
+    homePage.clickSignInLink();
+}
+</code></pre>
+
+<p>}</p>
+
+<h2>
+<a id="run-test-suite" class="anchor" href="#run-test-suite" aria-hidden="true"><span class="octicon octicon-link"></span></a>Run Test Suite</h2>
+
+<p>Test Suites are used to run a group of Tests which are tagged and represented in form of Feature files &amp; Scenarios</p>
+
+<p>Location: /home/dev/src/salmonAutomationFramework/src/test/java/com/salmon/test
+File Conventions:Every Class file ends with Suite.class (RunWebATSuite.class)  </p>
+
+<pre><code>@CucumberOptions(features = "target/test-classes", tags = {"@gui"}, monochrome = true, plugin = {
+        "pretty", "html:target/cucumber-report/runwebat",
+        "json:target/cucumber-report/runwebat/cucumber.json",
+        "rerun:target/cucumber-report/runwebat/rerun.txt"},
+        glue = "com.salmon.test")
+public class RunWebATSuite extends AbstractTestNGCucumberTests {
+}
+</code></pre>
+
+<p>Where: -<br>
+features: represent the location of feature files from the compiled build<br>
+tags:  multiple tags can be specified by comma separated denotation, if a specific tag needs to be excluded then this 
+        can be specified by "~" . e.g "~@api" feature files tagged with "~api" will not be run as a part of Test Suite.<br>
+plugin: html,json and rerun reports are created. if a TesSuite is renamed then change the reporting directory name for both reports  </p>
+
+<h2>
+<a id="other-ways-to-run-the-tests-or-test-suite" class="anchor" href="#other-ways-to-run-the-tests-or-test-suite" aria-hidden="true"><span class="octicon octicon-link"></span></a>Other ways to run the tests or Test Suite</h2>
+
+<p>*command line using Maven:-  mvn clean install -P dev<br>
+*IDE Plugins: - Eclipse or Intellij via TestNg plugin or Maven plugin or Cucumber-Java plugin<br>
+*IDE TestNg Suite xml: - file located at "src/test/resources" TestNGRunTestSuite.xml (Right click and run as TestNg)</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/gauravkarvir/cucumber_testng_java">Automation Framework</a> is maintained by <a href="https://github.com/gauravkarvir">gauravkarvir</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
