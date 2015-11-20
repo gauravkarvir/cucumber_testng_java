@@ -4,7 +4,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 
-@CucumberOptions(features = "target/test-classes", tags = {"@api,@mobile"}, monochrome = true, plugin = {
+@CucumberOptions(features = "target/test-classes", tags = {"@api"}, monochrome = true, plugin = {
         "pretty", "html:target/cucumber-report/runapiat",
         "json:target/cucumber-report/runapiat/cucumber.json",
         "rerun:target/cucumber-report/runapiat/rerun.txt"},

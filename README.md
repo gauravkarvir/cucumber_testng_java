@@ -1,6 +1,6 @@
-===============================
-GK Test Automation Framework
-================================
+==============================================================
+BDDD Cucumber Appium Rest-Assured Test Automation Framework
+===============================================================
 This project is a template test automation framework, which provides structured and standard way of 
 creating automated test scripts for GUI, Mobile and API level tests across salmon projects  
 
@@ -150,39 +150,23 @@ run "mvn clean eclipse:eclipse"
 
 Framework Setup steps
 ============================
-URL,  Browser Configuration, Test Suites to Run
+The URL, Browser Configuration, jdbc connections etc are defined in the respective config.properties file under each desired profile which you want to run.
+In pom.xml we use the relative path within <profile.path> as shown below to invoke or make use of these profiles. 
+src/main/resources/profiles
+
 Open "pom.xml" 
 Scroll to Profile section : - Choose desired profile e.g "dev" for running locally
 
-            <!-- Development environment @ my local machine -->
-                    <profile>
-                        <id>dev</id>
-                        <activation>
-                            <activeByDefault>true</activeByDefault>
-                        </activation>
-                        <properties>
-                            <!-- Application under test-->
-                            <site.url>http://www.lloydspharmacy.com/</site.url>
-                            <!-- Service under test-->
-                            <api.url>http://www.dulux.com.sg</api.url>
-                            <!-- AUT has default desired port-->
-                            <site.port></site.port>
-                            <!-- AUT has default base path-->
-                            <site.basepath></site.basepath>
-                            <!--platform to run e.g linux64, mac32, win32, win64-->
-                            <platform>linux64</platform>
-                            <!--Desired browser to run e.g firefox,chrome,iexplore phantomjs-->
-                            <browser>firefox</browser>
-                            <!--To Run parallel Test suite specify the type of Run Files which can be run in parallel -->
-                            <testToRun>**/*ATSuite.class</testToRun>
-            
-                            <!--Database Params -->
-                            <jdbcUrl>jdbc:mysql://localhost:3306/sonar</jdbcUrl>
-                            <jdbcDriver>com.mysql.jdbc.Driver</jdbcDriver>
-                            <jdbcUser>sonar</jdbcUser>
-                            <jdbcPwd>sonar</jdbcPwd>
-            
-                        </properties>
+        <profile>
+			<id>dev</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<profile.path>/profiles/dev/config.properties</profile.path>
+				<testToRun>**/*WebATSuite*.class</testToRun>
+			</properties>
+		</profile>
 
 
 Compile Build or Run Tests
