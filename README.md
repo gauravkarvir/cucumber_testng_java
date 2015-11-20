@@ -1,8 +1,8 @@
-==============================================================
-BDD Cucumber Appium Rest-Assured Test Automation Framework
-===============================================================
+==================================================================================
+BDD Cucumber Selenium Webdriver Appium Rest-Assured Java Test Automation Framework
+==================================================================================
 This project is a template test automation framework, which provides structured and standard way of 
-creating automated test scripts for GUI, Mobile and API level tests across salmon projects  
+creating automated test scripts for GUI, Mobile and API level tests across projects  
 
 This is a reusable automation framework that blends together Selenium WebDriver, Appium, Android Driver, RestEasy, SauceLabs and Cucumber JVM (incorporating Gherkin and the BDD 'Given, When Then' testing construct)   
 
