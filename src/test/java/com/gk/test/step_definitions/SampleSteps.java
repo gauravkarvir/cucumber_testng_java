@@ -1,6 +1,6 @@
 package com.gk.test.step_definitions;
 
-import com.gk.test.models.ExampleModel;
+import com.gk.test.models.cucumber.ExampleModel;
 import cucumber.api.DataTable;
 import cucumber.api.Transpose;
 import cucumber.api.java.en.Given;

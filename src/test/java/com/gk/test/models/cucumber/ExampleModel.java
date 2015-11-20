@@ -1,4 +1,4 @@
-package com.gk.test.models;
+package com.gk.test.models.cucumber;
 
 import lombok.Getter;
 import lombok.Setter;

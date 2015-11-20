@@ -35,7 +35,7 @@ public class UrlBuilder {
     }
 
     public static URI getBasePathURI() {
-        return URI.create(LoadProperties.getRunProps().getProperty(""));
+        return URI.create(LoadProperties.getRunProps().getProperty("api.url"));
     }
 
 
