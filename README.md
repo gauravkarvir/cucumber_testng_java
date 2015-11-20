@@ -1,5 +1,5 @@
 ==============================================================
-BDDD Cucumber Appium Rest-Assured Test Automation Framework
+BDD Cucumber Appium Rest-Assured Test Automation Framework
 ===============================================================
 This project is a template test automation framework, which provides structured and standard way of 
 creating automated test scripts for GUI, Mobile and API level tests across salmon projects  
