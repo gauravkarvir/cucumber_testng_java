@@ -1,5 +1,6 @@
 package com.gk.test.framework;
 
+import com.gk.test.framework.helpers.LoadProperties;
 import com.gk.test.framework.helpers.WebDriverHelper;
 import lombok.Getter;
 import org.openqa.selenium.*;
@@ -11,23 +12,27 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
+import java.util.Properties;
 import java.util.ResourceBundle;
 
 public abstract class PageObject {
     private static final long DRIVER_WAIT_TIME = 10;
     private static final Logger LOG = LoggerFactory.getLogger(PageObject.class);
     @Getter
-    private final ResourceBundle props;
+    private final ResourceBundle resourceProps;
+    private final Properties props;
     @Getter
     protected WebDriverWait wait;
     @Getter
     protected WebDriver webDriver;
 
 
+
     protected PageObject() {
         this.webDriver = WebDriverHelper.getWebDriver();
         this.wait = new WebDriverWait(webDriver, DRIVER_WAIT_TIME);
-        this.props = ResourceBundle.getBundle("props/messages");
+        this.resourceProps = ResourceBundle.getBundle("props/messages");
+        this.props = LoadProperties.getProps();
     }
 
     /**
@@ -403,5 +408,35 @@ public abstract class PageObject {
 
     public String getElementByQueryJSExecutor(String cssSelector) {
         return ((JavascriptExecutor) webDriver).executeScript("return window.getComputedStyle(document.querySelector('" + cssSelector + "')").toString();
+    }
+
+    /**
+     * Gets the key from messages.properties for a Site
+     *
+     * @param key
+     **/
+    public String getMessage(String key) {
+
+        if ((key == null) || key.isEmpty()) {
+            return "";
+        } else {
+            return resourceProps.getString(key);
+
+        }
+    }
+
+    /**
+     * Gets the key from Config.properties related to chosen profile
+     *
+     * @param key
+     **/
+
+    public String getProp(String key) {
+        if ((key == null) || key.isEmpty()) {
+            return "";
+        } else {
+            return props.getProperty(key);
+
+        }
     }
 }

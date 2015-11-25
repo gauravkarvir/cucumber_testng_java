@@ -1,12 +1,9 @@
 package com.gk.test.step_definitions.gui.register;
 
 import com.gk.test.page_objects.gui.SignInOrRegisterPage;
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-
-import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -27,7 +24,7 @@ public class SignInOrRegisterSteps {
 
     @Then("^i am signed out successfully and can view Sign In Page$")
     public void i_am_signed_out_successfully_and_can_view_Sign_In_Page() throws Throwable {
-        assertThat(signInOrRegisterPage.getSignInOrRegisterTitle()).contains(signInOrRegisterPage.getProps().getString("signInTitle"));
+        assertThat(signInOrRegisterPage.getSignInOrRegisterTitle()).contains(signInOrRegisterPage.getResourceProps().getString("signInTitle"));
     }
 
 
@@ -44,7 +41,7 @@ public class SignInOrRegisterSteps {
 
     @Then("^i can see the validation message \"(.*?)\"$")
     public void i_can_see_the_validation_message(String expectedErrorMessage) throws Throwable {
-        assertThat(signInOrRegisterPage.getErrorMessage()).contains(signInOrRegisterPage.getProps().getString(expectedErrorMessage));
+        assertThat(signInOrRegisterPage.getErrorMessage()).contains(signInOrRegisterPage.getResourceProps().getString(expectedErrorMessage));
     }
 
     @And("^i click on Sign In button on the Login Page$")
