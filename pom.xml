@@ -54,7 +54,7 @@
 
     <properties>
         <cucumber.version>1.2.2</cucumber.version>
-        <selenium.version>2.46.0</selenium.version>
+        <selenium.version>2.49.0</selenium.version>
         <phantomjs.version>1.2.1</phantomjs.version>
         <slf4jVersion>1.7.7</slf4jVersion>
         <cucumber-jvm-deps>1.0.3</cucumber-jvm-deps>
