@@ -2,7 +2,6 @@ package com.gk.test.framework.helpers;
 
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.Dimension;
-import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
@@ -24,7 +23,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.logging.Level;
 
-public class WebDriverHelper extends EventFiringWebDriver {
+public abstract class WebDriverHelper extends EventFiringWebDriver {
     private static final Logger LOG = LoggerFactory
             .getLogger(WebDriverHelper.class);
     private static RemoteWebDriver REAL_DRIVER = null;
@@ -39,7 +38,6 @@ public class WebDriverHelper extends EventFiringWebDriver {
     private static String PLATFORM;
     private static String DRIVER_PATH;
     private static String DRIVER_ROOT_DIR;
-    private static String FILE_SEPARATOR;
     private static String SELENIUM_HOST;
     private static String SELENIUM_PORT;
     private static String SELENIUM_REMOTE_URL;
@@ -48,17 +46,17 @@ public class WebDriverHelper extends EventFiringWebDriver {
     private static Integer BROWSER_WINDOW_HEIGHT;
 
     static {
-        LoadProperties.loadRunConfigProps("/environment.properties");
-        SELENIUM_HOST = System.getProperty("driverhost");
-        SELENIUM_PORT = System.getProperty("driverport");
-        FILE_SEPARATOR = System.getProperty("file.separator");
-        PLATFORM = LoadProperties.getProps().getProperty("platform");
-        BROWSER = LoadProperties.getProps().getProperty("browser");
-        BROWSER_WINDOW_WIDTH = Integer.parseInt(LoadProperties.getProps().getProperty("browser.width"));
-        BROWSER_WINDOW_HEIGHT = Integer.parseInt(LoadProperties.getProps().getProperty("browser.height"));
+        Props.loadRunConfigProps("/environment.properties");
+        SELENIUM_HOST = Props.getProp("driverhost");
+        SELENIUM_PORT = Props.getProp("driverport");
+        PLATFORM = Props.getProp("platform");
+        BROWSER = Props.getProp("browser");
+        BROWSER_WINDOW_WIDTH = Integer.parseInt(Props.getProp("browser.width"));
+        BROWSER_WINDOW_HEIGHT = Integer.parseInt(Props.getProp("browser.height"));
         BROWSER_WINDOW_SIZE = new Dimension(BROWSER_WINDOW_WIDTH, BROWSER_WINDOW_HEIGHT);
-        DRIVER_ROOT_DIR = LoadProperties.getProps().getProperty(
+        DRIVER_ROOT_DIR = Props.getProp(
                 "driver.root.dir");
+
         if (!DRIVER_ROOT_DIR.equals("DEFAULT_PATH")) {
             System.setProperty("webdriver.chrome.driver", getDriverPath());
             System.setProperty("webdriver.ie.driver", getDriverPath());
@@ -68,21 +66,26 @@ public class WebDriverHelper extends EventFiringWebDriver {
         }
 
         try {
-            if (BROWSER.equalsIgnoreCase("chrome")) {
-                REAL_DRIVER = (RemoteWebDriver) startChromeDriver();
-            } else if (BROWSER.equalsIgnoreCase("firefox")) {
-                startFireFoxDriver();
-            } else if (BROWSER.equalsIgnoreCase("iexplore")) {
-                startIEDriver();
-            } else if (BROWSER.equalsIgnoreCase("phantomjs")) {
-                startPhantomJsDriver();
-            } else if (BROWSER.equalsIgnoreCase("appium")) {
-                startAppiumDriver();
-            } else if (BROWSER.equalsIgnoreCase("sauce")) {
-                startSauceDriver();
-            } else {
-                throw new IllegalArgumentException("Browser " + BROWSER + " or Platform "
-                        + PLATFORM + " type not supported");
+            switch (BROWSER.toLowerCase()) {
+                case ("chrome"):
+                    startChromeDriver();
+                    break;
+                case ("firefox"):
+                    startFireFoxDriver();
+                    break;
+                case ("iexplore"):
+                    startIEDriver();
+                    break;
+                case ("phantomjs"):
+                    startPhantomJsDriver();
+                    break;
+                case ("sauce"):
+                    startSauceDriver();
+                    break;
+                default:
+                    throw new IllegalArgumentException("Browser " + BROWSER + " or Platform "
+                            + PLATFORM + " type not supported");
+
             }
 
         } catch (IllegalStateException e) {
@@ -98,31 +101,13 @@ public class WebDriverHelper extends EventFiringWebDriver {
     }
 
     private static String getDriverPath() {
-        if (BROWSER.equals("chrome") && PLATFORM.contains("win")) {
-            DRIVER_PATH = DRIVER_ROOT_DIR + FILE_SEPARATOR + "chromedriver"
-                    + FILE_SEPARATOR + PLATFORM + FILE_SEPARATOR
-                    + "chromedriver.exe";
-        } else if (BROWSER.equals("chrome") && PLATFORM.contains("linux")) {
-            DRIVER_PATH = DRIVER_ROOT_DIR + FILE_SEPARATOR + "chromedriver"
-                    + FILE_SEPARATOR + PLATFORM + FILE_SEPARATOR
-                    + "chromedriver";
-
-        } else if (BROWSER.equals("iexplore") && PLATFORM.contains("win")) {
-            DRIVER_PATH = DRIVER_ROOT_DIR + FILE_SEPARATOR + "iedriver"
-                    + FILE_SEPARATOR + PLATFORM + FILE_SEPARATOR
-                    + "IEDriverServer.exe";
-        } else if (BROWSER.equals("phantomjs") && PLATFORM.contains("linux")) {
-            DRIVER_PATH = DRIVER_ROOT_DIR + FILE_SEPARATOR + "phantomjs"
-                    + FILE_SEPARATOR + PLATFORM + FILE_SEPARATOR
-                    + "phantomjs";
-        }
-
+        DRIVER_PATH = Props.getProp("driver.root.dir");
         return DRIVER_PATH;
     }
 
     private static void startIEDriver() {
         DesiredCapabilities capabilities = getInternetExploreDesiredCapabilities();
-        if (SELENIUM_HOST == null)
+        if (SELENIUM_HOST == null || SELENIUM_HOST.isEmpty())
             REAL_DRIVER = new InternetExplorerDriver(capabilities);
         else {
             try {
@@ -136,11 +121,10 @@ public class WebDriverHelper extends EventFiringWebDriver {
 
     private static void startFireFoxDriver() {
         DesiredCapabilities capabilities = getFireFoxDesiredCapabilities();
-        if (SELENIUM_HOST == null)
+        if (SELENIUM_HOST == null || SELENIUM_HOST.isEmpty())
             REAL_DRIVER = new FirefoxDriver();
         else {
             try {
-                capabilities.setPlatform(Platform.WIN8);
                 REAL_DRIVER = getRemoteWebDriver(capabilities);
             } catch (MalformedURLException e) {
                 LOG.error(SELENIUM_REMOTE_URL + " Error " + e.getMessage());
@@ -151,7 +135,7 @@ public class WebDriverHelper extends EventFiringWebDriver {
 
     private static void startPhantomJsDriver() {
         DesiredCapabilities capabilities = getPhantomJsCapabilities();
-        if (SELENIUM_HOST == null)
+        if (SELENIUM_HOST == null || SELENIUM_HOST.isEmpty())
             REAL_DRIVER = new PhantomJSDriver(capabilities);
         else {
             try {
@@ -186,7 +170,7 @@ public class WebDriverHelper extends EventFiringWebDriver {
     private static WebDriver startChromeDriver() {
         DesiredCapabilities capabilities = getChromeDesiredCapabilities();
 
-        if (SELENIUM_HOST == null)
+        if (SELENIUM_HOST == null || SELENIUM_HOST.isEmpty())
             REAL_DRIVER = new ChromeDriver(
                     ChromeDriverService.createDefaultService(), capabilities);
         else {
@@ -272,14 +256,17 @@ public class WebDriverHelper extends EventFiringWebDriver {
     }
 
     private static RemoteWebDriver getRemoteWebDriver(DesiredCapabilities capabilities) throws MalformedURLException {
-
         SELENIUM_REMOTE_URL = "http://" + SELENIUM_HOST + ":" + SELENIUM_PORT + "/wd/hub";
-        LOG.error(SELENIUM_REMOTE_URL + " Checking Selenium Remote URL");
+        LOG.info(SELENIUM_REMOTE_URL + " Checking Selenium Remote URL");
         return new RemoteWebDriver(new URL(SELENIUM_REMOTE_URL), (capabilities));
     }
 
     public static WebDriver getWebDriver() {
         return REAL_DRIVER;
+    }
+
+    public static void resizeBrowserWindow(Dimension dimension) {
+        getWebDriver().manage().window().setSize(dimension);
     }
 
     @Override

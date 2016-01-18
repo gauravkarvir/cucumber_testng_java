@@ -1,6 +1,5 @@
 package com.gk.test.framework;
 
-import com.gk.test.framework.helpers.LoadProperties;
 import com.gk.test.framework.helpers.WebDriverHelper;
 import lombok.Getter;
 import org.openqa.selenium.*;
@@ -12,27 +11,20 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
-import java.util.Properties;
-import java.util.ResourceBundle;
 
 public abstract class PageObject {
     private static final long DRIVER_WAIT_TIME = 10;
     private static final Logger LOG = LoggerFactory.getLogger(PageObject.class);
-    @Getter
-    private final ResourceBundle resourceProps;
-    private final Properties props;
+
     @Getter
     protected WebDriverWait wait;
     @Getter
     protected WebDriver webDriver;
 
 
-
     protected PageObject() {
         this.webDriver = WebDriverHelper.getWebDriver();
         this.wait = new WebDriverWait(webDriver, DRIVER_WAIT_TIME);
-        this.resourceProps = ResourceBundle.getBundle("props/messages");
-        this.props = LoadProperties.getProps();
     }
 
     /**
@@ -411,32 +403,38 @@ public abstract class PageObject {
     }
 
     /**
-     * Gets the key from messages.properties for a Site
+     * Wrapper for driver.findElement
      *
-     * @param key
+     * @param by Element location found by css, xpath, id etc...
      **/
-    public String getMessage(String key) {
-
-        if ((key == null) || key.isEmpty()) {
-            return "";
-        } else {
-            return resourceProps.getString(key);
-
-        }
+    protected WebElement element(final By by) {
+        return getWebDriver().findElement(by);
     }
 
     /**
-     * Gets the key from Config.properties related to chosen profile
+     * Wrapper for clear data and sendKeys in Input Text box
      *
-     * @param key
+     * @param by        Element location found by css, xpath, id etc...
+     * @param inputText text to be entered
      **/
 
-    public String getProp(String key) {
-        if ((key == null) || key.isEmpty()) {
-            return "";
-        } else {
-            return props.getProperty(key);
-
-        }
+    protected void clearEnterText(By by, String inputText) {
+        element(by).clear();
+        element(by).sendKeys(inputText);
     }
+
+    /**
+     * Wrapper for wait, clear data and sendKeys in Input Text box
+     * <p>
+     * * @param by Element location found by css, xpath, id etc...
+     *
+     * @param inputText text to be entered
+     **/
+    protected void waitClearEnterText(By by, String inputText) {
+        waitForExpectedElement(by).clear();
+        element(by).sendKeys(inputText);
+
+    }
+
+
 }

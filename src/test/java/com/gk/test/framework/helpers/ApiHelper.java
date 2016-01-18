@@ -13,6 +13,8 @@ import static com.jayway.restassured.RestAssured.given;
  */
 
 public class ApiHelper {
+    private static Gson gson;
+
     static {
         RestAssured.baseURI = UrlBuilder.getBasePathURI().toString();
     }
@@ -23,10 +25,17 @@ public class ApiHelper {
                 header("Accept-Language", "en").header("Content-Type", "application/json");
     }
 
+    //Specify all one time default Gson config
     public static Gson gson() {
-        return new GsonBuilder().create();
+        GsonBuilder gsonBuilder = new GsonBuilder();
+        gson = gson(gsonBuilder);
+        return gson;
+    }
 
-
+    //Custom Gson config to override Default Gson  configuration
+    public static Gson gson(GsonBuilder gsonBuilder) {
+        gson = gsonBuilder.create();
+        return gson;
     }
 
 

@@ -1,6 +1,10 @@
 @database
-Feature: Sample Database tests
+Feature: Sample Database tests for DB2 Database
 
-  Scenario: Sample example to query Database and validate results
-    When I run the query to get list of users "select * from users" from mysql database
-    Then the list of users is "NOT_EMPTY"
+  Scenario: Simple example to query Database and validate results with Record Set
+    When I run query "query.getUserReg" to get list of users in record set
+    Then the list of users is not empty
+
+  Scenario: Example to query Database and validate results using Java Bean
+    When I run query "query.getUserReg" to get list of users in bean
+    Then the list of users contains "wcsadmin" as a user

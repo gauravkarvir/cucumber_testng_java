@@ -18,30 +18,22 @@ public class DatabaseHelper {
     private static final String jdbcDriver;
     private static final String jdbcUser;
     private static final String jdbcPwd;
+    private static final String RUN_CONFIG_PROPERTIES = "/environment.properties";
     private static Connection conn = null;
+    private static QueryRunner run;
+
 
     static {
-        jdbcUrl = LoadProperties.getRunProps().getProperty("jdbcUrl");
-        jdbcDriver = LoadProperties.getRunProps().getProperty("jdbcDriver");
-        jdbcUser = LoadProperties.getRunProps().getProperty("jdbcUser");
-        jdbcPwd = LoadProperties.getRunProps().getProperty("jdbcPwd");
+        Props.loadRunConfigProps(RUN_CONFIG_PROPERTIES);
+
+        jdbcUrl = Props.getProp("jdbcUrl");
+        jdbcDriver = Props.getProp("jdbcDriver");
+        jdbcUser = Props.getProp("jdbcUser");
+        jdbcPwd = Props.getProp("jdbcPwd");
 
     }
 
-    /**
-     * Executes the sql Query and returns the results in list format
-     *
-     * @param sqlQuery Specify sql query in String format
-     */
-
-    protected static List executeQuery(String sqlQuery) throws SQLException {
-        conn = setUpConnection();
-        QueryRunner run = new QueryRunner();
-        return run.query(conn, sqlQuery, new MapListHandler());
-    }
-
-
-    private static Connection setUpConnection() {
+    protected static Connection setUpConnection() {
 
         try {
             DbUtils.loadDriver(jdbcDriver);
@@ -54,5 +46,18 @@ public class DatabaseHelper {
             DbUtils.closeQuietly(conn);
         }
         return conn;
+    }
+
+    /**
+     * Executes the sql Query and returns the results in list format
+     *
+     * @param sqlQuery Specify sql query in String format
+     */
+    public List executeQuery(String sqlQuery) throws SQLException {
+        return getQueryRunner().query(setUpConnection(), sqlQuery, new MapListHandler());
+    }
+
+    protected QueryRunner getQueryRunner() {
+        return new QueryRunner();
     }
 }
