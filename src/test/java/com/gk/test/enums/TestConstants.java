@@ -11,7 +11,7 @@ import lombok.Getter;
 
 @AllArgsConstructor
 public enum TestConstants {
-    SALMON_TEST_FRAMEWORK("salmon test framework"),
+    TEST_FRAMEWORK("GK test framework"),
     TEST_COUNT("test count");
 
     @Getter
