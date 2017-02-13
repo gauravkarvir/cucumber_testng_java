@@ -137,7 +137,7 @@ Android Page Objects
 -------------------------------------------------------------------
 Every Mobile Page  class extends "AndroidObject.class" to make use of the AndroidDriver Object and utility functions.  
   
-Location: /home/dev/src/salmonAutomationFramework/src/test/java/com/salmon/test/pageobjects/mobile
+Location: /home/dev/src/automationFramework/src/test/java/com/gk/test/pageobjects/mobile
 Directory structure: Group common Page Objects classes in a single directory e.g Login Functionality Classes in Login Directory      
 File Conventions:Every Class file ends with Page.class (Homepage.class)  
 
