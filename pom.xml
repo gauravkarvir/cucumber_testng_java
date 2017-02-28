@@ -263,13 +263,14 @@
             <version>${selenium.version}</version>
             <scope>test</scope>
         </dependency>
-
+        <!--Support for Expected Conditions for latest Selenium
+        deprecated: public void until(final Predicate<T> isTrue) {}
+        new:        public <V> V until(Function<? super T, V> isTrue) {}-->
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>21.0</version>
         </dependency>
-
 
         <!--PhantomJsDriver Custom to support latest Webdriver-->
         <dependency>
