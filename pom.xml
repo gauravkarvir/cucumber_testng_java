@@ -54,7 +54,7 @@
 
     <properties>
         <cucumber.version>1.2.5</cucumber.version>
-        <selenium.version>3.0.1</selenium.version>
+        <selenium.version>3.2.0</selenium.version>
         <phantomjs.version>1.2.1</phantomjs.version>
         <slf4jVersion>1.7.21</slf4jVersion>
         <cucumber-jvm-deps>1.0.5</cucumber-jvm-deps>
@@ -174,7 +174,9 @@
                             <projectName>cucumbertests</projectName>
                             <outputDirectory>target/cucumber-report/cucumber-html-reports</outputDirectory>
                             <cucumberOutput>target/cucumber-report/cucumber.json</cucumberOutput>
+<!--
                             <enableFlashCharts>false</enableFlashCharts>
+-->
                         </configuration>
                     </execution>
                 </executions>
@@ -261,6 +263,13 @@
             <version>${selenium.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>21.0</version>
+        </dependency>
+
 
         <!--PhantomJsDriver Custom to support latest Webdriver-->
         <dependency>
