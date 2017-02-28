@@ -14,15 +14,15 @@ public class SignInOrRegisterPage extends PageObject {
 
     private By signInOrRegisterTitle = By.cssSelector(".sign_in h1");
 
-    private By loginIdText = By.id("logonId");
+    private By loginIdText = By.name("logonId");
 
     private By passwordText = By.name("logonPassword");
 
-    private By signInButton = By.id("WC_AccountDisplay_links_2");
+    private By signInButton = By.cssSelector("#pageLoginForm input.btnAction[name=signIn]");
 
     private By registerButton = By.id("WC_AccountDisplay_links_3");
 
-    private By errorMessage = By.id("ErrorMessageText");
+    private By errorMessage = By.cssSelector(".errorMsg");
 
 
     public String getSignInOrRegisterTitle() {

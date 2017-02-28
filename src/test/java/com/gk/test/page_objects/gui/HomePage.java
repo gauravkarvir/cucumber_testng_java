@@ -11,7 +11,7 @@ import org.openqa.selenium.By;
  */
 public class HomePage extends PageObject {
 
-    private By headerSignInLink = By.cssSelector("#headerSignInLink a");
+    private By headerSignInLink = By.cssSelector(".iLock");
     private By headerLogoutLink = By.id("headerLogout");
 
     public void clickSignInLink() {

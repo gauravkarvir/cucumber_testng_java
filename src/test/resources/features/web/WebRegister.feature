@@ -4,9 +4,6 @@
 #Tags are annotated with "@" symbol
 @gui
 Feature: REGISTER:- As a new customer of Lloydspharmacy I would like to register so I can : -
-  receive advance notice of promotions
-  place orders and track their status
-  register for Express Repeat Prescription Service
 
   #This is a typical scenario Example. Every Scenario starts with "Scenario:" keyword.
   #Scenarios are represented in Given When Then syntax
