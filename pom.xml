@@ -134,7 +134,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>ReportMerger</mainClass>
+                    <mainClass>com.gk.test.ReportMerger</mainClass>
                     <arguments>
                         <argument>target/cucumber-report/</argument>
                     </arguments>
