@@ -80,6 +80,9 @@ public abstract class WebDriverHelper extends EventFiringWebDriver {
                 case ("phantomjs"):
                     startPhantomJsDriver();
                     break;
+                case ("appium"):
+                    startAppiumDriver();
+                    break;
                 case ("sauce"):
                     startSauceDriver();
                     break;
@@ -191,8 +194,8 @@ public abstract class WebDriverHelper extends EventFiringWebDriver {
         logs.enable(LogType.DRIVER, Level.OFF);
         DesiredCapabilities capabilities = DesiredCapabilities.chrome();
         capabilities.setCapability(CapabilityType.LOGGING_PREFS, logs);
-
         ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--disable-extensions");
         chromeOptions.addArguments("--disable-web-security");
         chromeOptions.addArguments("--test-type");
         capabilities.setCapability("chrome.verbose", false);
@@ -238,10 +241,9 @@ public abstract class WebDriverHelper extends EventFiringWebDriver {
     private static DesiredCapabilities getAppiumDesiredCapabilities() {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("device", "Android");
-        capabilities.setCapability(MobileCapabilityType.APP, "Chrome");
-        capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "");
+        capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, PLATFORM);
-        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "42f7ab1fb7b59fab");
+        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "emulator-5554");
         return capabilities;
     }
 

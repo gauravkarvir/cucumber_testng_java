@@ -71,26 +71,25 @@ Start the server by clicking on Play button
 
 Run Web App Tests on Android Emulated Device or Physical Device using Chrome Browser   
 ============================  
-Open "pom.xml" (For running Web Apps)   
+Open "config.properties" (For running Web Apps)   
 Scroll to Profile section : - Choose desired profile e.g "dev" for running locally  
 Set  
            
+           
            <!--platform to run e.g linux64, mac32, win32, win64, Android-->
-                            <platform>Android</platform>
+           platform=Android
            <!--Desired browser to run e.g firefox,chrome,iexplore,phantomjs, appium, sauce -->
-                            <browser>appium</browser>
+           browser=appium
 
 Open WebDriverHelper and configure appium desired capabilites as per the configuration needed. e.g.
 
 ```
 private static DesiredCapabilities getAppiumDesiredCapabilities() {
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("device", "Android");
-        capabilities.setCapability(MobileCapabilityType.APP, "Chrome");
-        capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "");
-        capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, PLATFORM);
-        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "42f7ab1fb7b59fab");
-        return capabilities;
+                DesiredCapabilities capabilities = new DesiredCapabilities();
+                capabilities.setCapability("device", "Android");
+                capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
+                capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, PLATFORM);
+                capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "emulator-5554");
     }
     ```
     
