@@ -60,7 +60,7 @@ Test Automation framework support
 Gaurav Karvir
 --------------
 Test Automation Architect  
-sgtechuk@gmail.com  
+genroks@gmail.com  
 
 
 
