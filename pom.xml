@@ -6,7 +6,7 @@
 
     <groupId>com.gk.test</groupId>
     <artifactId>gktestframewrok</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>2.0</version>
 
     <!-- Test Profiles, define URL for AUT, Browser and Test Suites -->
 
@@ -53,25 +53,24 @@
 
 
     <properties>
-        <cucumber.version>1.2.5</cucumber.version>
-        <selenium.version>3.2.0</selenium.version>
+        <cucumber.version>4.2.3</cucumber.version>
+        <selenium.version>3.141.59</selenium.version>
         <phantomjs.version>1.2.1</phantomjs.version>
         <slf4jVersion>1.7.21</slf4jVersion>
-        <cucumber-jvm-deps>1.0.5</cucumber-jvm-deps>
         <picocontainer>2.15</picocontainer>
         <rest-assured>2.7.0</rest-assured>
         <commons-io>1.3.2</commons-io>
         <commons-lang>3.4</commons-lang>
-        <lombok>1.16.4</lombok>
+        <lombok>1.18.8</lombok>
         <assertj-assert>3.2.0</assertj-assert>
-        <appium-java-client>3.1.0</appium-java-client>
+        <appium-java-client>4.1.2</appium-java-client>
         <common-db-utils>1.6</common-db-utils>
-        <maven-surefire-plugin>2.19.1</maven-surefire-plugin>
-        <mojo-exec-maven-plugin>1.5.0</mojo-exec-maven-plugin>
-        <maven-resource-plugin>3.0.1</maven-resource-plugin>
-        <maven-compiler-plugin>3.5.1</maven-compiler-plugin>
-        <maven-cucumber-reporting>3.2.0</maven-cucumber-reporting>
-        <testng>6.8.21</testng>
+        <maven-surefire-plugin>2.22.2</maven-surefire-plugin>
+        <mojo-exec-maven-plugin>1.6.0</mojo-exec-maven-plugin>
+        <maven-resource-plugin>3.1.0</maven-resource-plugin>
+        <maven-compiler-plugin>3.8.1</maven-compiler-plugin>
+        <maven-cucumber-reporting>4.8.0</maven-cucumber-reporting>
+        <testng>6.14.2</testng>
         <utf-8>UTF-8</utf-8>
         <joda-time>2.5</joda-time>
         <java-version>1.8</java-version>
@@ -173,15 +172,17 @@
                         <configuration>
                             <projectName>cucumbertests</projectName>
                             <outputDirectory>target/cucumber-report/cucumber-html-reports</outputDirectory>
-                            <cucumberOutput>target/cucumber-report/cucumber.json</cucumberOutput>
-<!--
-                            <enableFlashCharts>false</enableFlashCharts>
--->
+                            <inputDirectory>target/cucumber-report</inputDirectory>
+
+                            <jsonFiles>
+                                <!-- supports wildcard or name pattern -->
+                                <param>**/*cucumber.json</param>
+                            </jsonFiles>
+
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
-
 
         </plugins>
 
@@ -207,37 +208,35 @@
             <version>${rest-assured}</version>
         </dependency>
         <!-- Api Level Testing -->
-        <!-- Cucumber -->
         <dependency>
-            <groupId>info.cukes</groupId>
-            <artifactId>cucumber-jvm-deps</artifactId>
-            <scope>test</scope>
-            <version>${cucumber-jvm-deps}</version>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.version}</version>
         </dependency>
         <dependency>
-            <groupId>info.cukes</groupId>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>datatable</artifactId>
+            <version>1.1.12</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
             <artifactId>cucumber-picocontainer</artifactId>
             <version>${cucumber.version}</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>info.cukes</groupId>
-            <artifactId>cucumber-testng</artifactId>
-            <version>${cucumber.version}</version>
-            <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>junit</groupId>
-                    <artifactId>junit</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.picocontainer</groupId>
-            <artifactId>picocontainer</artifactId>
-            <version>${picocontainer}</version>
-            <scope>test</scope>
-        </dependency>
+
         <!-- Cucumber -->
         <!--Selenium Webdriver -->
         <dependency>
@@ -245,6 +244,12 @@
             <artifactId>selenium-java</artifactId>
             <version>${selenium.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-api</artifactId>
+            <version>${selenium.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-chrome-driver</artifactId>
@@ -269,7 +274,7 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>21.0</version>
+            <version>23.0</version>
         </dependency>
 
         <!--PhantomJsDriver Custom to support latest Webdriver-->
@@ -279,14 +284,8 @@
             <version>${phantomjs.version}</version>
         </dependency>
 
-        <dependency>
 
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>${testng}</version>
-        </dependency>
         <!--Selenium Webdriver -->
-
 
 
         <!--Commons-IO contains utility classes, stream implementations, file filter,-->

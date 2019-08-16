@@ -226,7 +226,7 @@ Local reports
 Standard HTML Report  
 A report will be generated at /target/cucumber-report/index.html  
 
-Preety Cucumber-Html Report  
+Pretty Cucumber-Html Report  
 A report will be generated at /target/cucumber-report/cucumber-html-reports/feature-overview.html 
 
 Jenkins report
@@ -248,7 +248,7 @@ These files contains the acceptance criteria which are written in Gherkin Langua
 The feature files are tagged with "@tagname" to group common feature files 
 
 File Extension:  *.feature    
-Location: "/home/dev/src/automationFramework/src/test/resources/features"      
+Location: "/home/dev/src/automationFramework/src/main/resources/features"      
 Directory:  Separate directories for GUI and API tests, Group common features files in a 
 single directory    
 File Conventions:Meaning full name "WebRegister.feature"

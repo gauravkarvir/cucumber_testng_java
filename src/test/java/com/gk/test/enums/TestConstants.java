@@ -4,9 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 /*
-* Define Constants.
-* Create a new enum Class for defining new constants
-*/
+ * Define Constants.
+ * Create a new enum Class for defining new constants
+ */
 
 
 @AllArgsConstructor

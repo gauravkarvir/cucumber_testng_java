@@ -7,9 +7,8 @@ import lombok.Data;
 @Data
 public class ItemModel {
 
-    String itemType;
-    String uniqueId;
-    String itemName;
-
-
+    int userId;
+    int id;
+    String title;
+    String body;
 }

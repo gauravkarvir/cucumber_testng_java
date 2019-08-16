@@ -1,6 +1,7 @@
 package com.gk.test.framework.helpers;
 
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -50,8 +51,8 @@ public class AndroidHelper extends EventFiringWebDriver {
     private static DesiredCapabilities getAppiumDesiredCapabilities() {
         File app = new File("D:\\projects\\master_cucumber_testng\\tools\\ContactManager.apk");
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability(MobileCapabilityType.APP_PACKAGE, "com.example.android.contactmanager");
-        capabilities.setCapability(MobileCapabilityType.APP_ACTIVITY, ".ContactManager");
+        capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.example.android.contactmanager");
+        capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, ".ContactManager");
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "emulator-5554");
         //capabilities.setCapability("deviceName", "42f7ab1fb7b59fab");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "IOS");

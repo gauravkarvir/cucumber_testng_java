@@ -58,7 +58,7 @@ public abstract class WebDriverHelper extends EventFiringWebDriver {
                 "driver.root.dir");
 
         if (!DRIVER_ROOT_DIR.equals("DEFAULT_PATH")) {
-            System.setProperty("webdriver.gecko.driver",getDriverPath());
+            System.setProperty("webdriver.gecko.driver", getDriverPath());
             System.setProperty("webdriver.chrome.driver", getDriverPath());
             System.setProperty("webdriver.ie.driver", getDriverPath());
             System.setProperty("phantomjs.binary.path", getDriverPath());

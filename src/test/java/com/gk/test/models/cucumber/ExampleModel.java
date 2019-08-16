@@ -8,5 +8,5 @@ import lombok.Setter;
 public class ExampleModel {
     private String title;
     private String process;
-    private String  location;
+    private String location;
 }

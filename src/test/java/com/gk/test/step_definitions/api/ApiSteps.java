@@ -9,6 +9,7 @@ import com.google.gson.GsonBuilder;
 import com.jayway.restassured.response.Response;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import io.cucumber.datatable.dependency.com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.List;
 
@@ -20,15 +21,16 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 
 public class ApiSteps extends ApiHelper {
+    private final ObjectMapper objectMapper = new ObjectMapper();
 
     private Response response;
 
 
-/*   Perform a HTTP GET request for a endpoint*/
+    /*   Perform a HTTP GET request for a endpoint*/
 
     @When("^I perform GET request for \"([^\"]*)\" endpoint$")
     public void I_perform_GET_request_for_endpoint(String endpoint) {
-        response = Api.getListOfColours(endpoint);
+        response = Api.getList(endpoint);
     }
 
     /*   Verify HTTP Status code from response*/
@@ -39,14 +41,14 @@ public class ApiSteps extends ApiHelper {
     }
     /* Example with JsonPath to extract names of colour form JSON response
 
-    * Convert Response Object to asString(), which is Json Representation
-    * use JsonPath "from" to convert the Response Object to Json String Representation
-    * Access converted JSON String representation using locator e.g "colors.name"
-    *  Example with XmlPath
-    * String xml = post("/shopping").andReturn().body().asString()
-    * Node category = from(xml).get("shopping.category[0]");
+     * Convert Response Object to asString(), which is Json Representation
+     * use JsonPath "from" to convert the Response Object to Json String Representation
+     * Access converted JSON String representation using locator e.g "colors.name"
+     *  Example with XmlPath
+     * String xml = post("/shopping").andReturn().body().asString()
+     * Node category = from(xml).get("shopping.category[0]");
 
-    */
+     */
 
     @Then("^the colour collections contains colour name$")
     public void the_colour_collections_contains_colour_name() {
@@ -76,14 +78,14 @@ public class ApiSteps extends ApiHelper {
     }
 
 
-    @When("^I create an Item$")
-    public void I_create_an_Item(List<ItemModel> items) throws Throwable {
+    @When("I add an Item")
+    public void i_add_an_Item(List<ItemModel> items) {
         response = Api.postDetails(items);
     }
 
 
-    @When("^I update an Item$")
-    public void I_update_an_Item(List<ItemModel> items) throws Throwable {
+    @When("I update an Item$")
+    public void I_update_an_Item(List<ItemModel> items) {
         response = Api.updateDetails(items);
     }
 
@@ -96,11 +98,11 @@ public class ApiSteps extends ApiHelper {
     @Then("^the Item is \"([^\"]*)\"$")
     public void the_Item_is(String result) throws Throwable {
         if (result.equals("created")) {
-            assertThat(response.getStatusCode()).isEqualTo("201");
+            assertThat(response.getStatusCode()).isEqualTo(201);
         } else if (result.equals("updated")) {
-            assertThat(response.getStatusCode()).isEqualTo("201");
+            assertThat(response.getStatusCode()).isEqualTo(200);
         } else if (result.equals("deleted")) {
-            assertThat(response.getStatusCode()).isEqualTo("204");
+            assertThat(response.getStatusCode()).isEqualTo(200);
         }
 
     }

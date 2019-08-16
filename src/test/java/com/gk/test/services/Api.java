@@ -9,9 +9,8 @@ import java.util.List;
 
 public class Api extends ApiHelper {
 
-    public static final String PATH = "items/";
 
-    public static Response getListOfColours(String endpoint) {
+    public static Response getList(String endpoint) {
         return givenConfig().when().get(endpoint);
     }
 
@@ -21,7 +20,7 @@ public class Api extends ApiHelper {
         return givenConfig().
                 body(gson().toJson(itemModels)).
                 when().
-                post(PATH);
+                post("posts");
     }
 
 
@@ -29,13 +28,13 @@ public class Api extends ApiHelper {
         return givenConfig().
                 body(gson().toJson(itemModels)).
                 when().
-                put(PATH);
+                put("posts/1");
     }
 
 
-    public static Response deleteItem(String uniqueId) {
+    public static Response deleteItem(String id) {
         return givenConfig().
-                when().delete(PATH + uniqueId);
+                when().delete("posts/" + id);
     }
 
 }
