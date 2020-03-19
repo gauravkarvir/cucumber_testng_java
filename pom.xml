@@ -19,7 +19,7 @@
             </activation>
             <properties>
                 <profile.path>/profiles/dev/config.properties</profile.path>
-                <testToRun>**/*WebATSuite*.class</testToRun>
+                <testToRun>**/*SingleSuite*.class</testToRun>
             </properties>
         </profile>
 
