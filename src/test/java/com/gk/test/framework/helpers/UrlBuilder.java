@@ -18,7 +18,7 @@ public class UrlBuilder {
             Props.loadRunConfigProps(RUN_CONFIG_PROPERTIES);
             basePath = new URL(Props.getProp("site.url"));
             apiUrl = new URL(Props.getProp("api.url"));
-
+            LOG.info("API URL ", apiUrl);
         } catch (MalformedURLException e) {
             LOG.error(e.getMessage());
         }

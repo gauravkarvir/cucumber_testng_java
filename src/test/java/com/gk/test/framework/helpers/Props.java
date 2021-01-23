@@ -57,6 +57,7 @@ public class Props {
         }
         properties = new Properties();
         try (InputStream inputStream = Props.class.getResourceAsStream(environmentProps.getProperty("profile.path"))) {
+            LOG.info("Profile Path" + environmentProps.getProperty("profile.path").toString());
             properties.load(inputStream);
             properties.list(out);
         } catch (IOException e) {
